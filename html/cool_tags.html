@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interessante Elemente</title>
+    <link rel="stylesheet" href="html.css">
+    <link rel="icon" href="../logo.svg" type="image/svg">
+</head>
+<body>
+    <nav>
+        <label class="logo">Learn Coding</label>
+        <input type="checkbox" id="toggle_button">
+        <label for="toggle_button" class="toggle_button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li class="expandable_li">
+                <input type="checkbox" id="products_checkbox">
+                <label for="products_checkbox">Front-End</label>
+                <ul class="dropdown">
+                    <li><a href="html.html">HTML</a></li>
+                    <li><a href="../css/css.html">CSS</a></li>
+                    <li><a href="../js/js.html">Javasrcipt</a></li>
+                </ul>
+            </li>
+            <li><a href="../php.html">PHP</a></li>
+            <li><a href="../python/python.html">Python</a></li>
+        </ul>
+    </nav>
+    <main>
+        <br>
+        <h1>Interessante Elemente</h1>
+        <br>
+        <hr><br>
+
+        
+        <br>
+        <b class="title">Akkronyme anzeigen</b><br><br>
+
+        &lt;abbr>&lt;/abbr> <i>Man kann mit diesem Element die Bedeutung von Akkronymen anzeigen</i><br><br>
+
+        Beispiel:<br><br>
+        <pre>
+
+            &lt;abbr title="Hypertext Markup Language">HTML&lt;/abbr>
+        </pre><br><br>
+
+        Output:<br><br>
+
+        <abbr title="Hypertext Markup Language">HTML</abbr> (hover)<br><br>
+
+        <b class="title">Vorschläge bei input-Inputs</b><br><br>
+
+        Man kann mit diesen folgenden Elementen in einem Input Text-Feld Vorschläge anzeigen. Das wird an folgendem Beispiel erklärt.
+        <br><br>
+        <pre>
+
+            &lt;input type="input" list="colors">
+            &lt;datalist id="colors">
+                &lt;option value="red">&lt;/option>
+                &lt;option value="orange">&lt;/option>
+                &lt;option value="blue">&lt;/option>
+                &lt;option value="dark green">&lt;/option>
+            &lt;/datalist>
+        </pre><br><br>
+
+        <input type="input" list="colors">
+        <datalist id="colors">
+                <option value="red"></option>
+                <option value="orange"></option>
+                <option value="blue"></option>
+                <option value="dark green"></option>
+            </datalist><br><br>
+
+        Genau hier drüber kann man den Output sehen vom Code. um die Dataliist mit dem Input-Feld zu verbinden, muss das Attribute list genau den selben Wert wie id haben.
+        
+        <b class="title">Einfacher Weg eine Box zu erstellen</b><br><br>
+
+        Mit den beiden Elementen &lt;fieldset> und &lt;legend> ist es einfach schöne und praktische Boxen zu erstellen.<br><br>
+
+        <pre>
+
+            &lt;fieldset>
+                &lt;legend>Echt schön&lt;/legend>
+                Berlin, Paris
+            &lt;/fieldset>
+        </pre><br><br>
+
+        Output:<br><br>
+
+            <fieldset>
+                <legend>Echt schön</legend>
+                Berlin, Paris
+            </fieldset><br><br>
+        
+            Klar sieht es gerade nicht richtig schön aus aber es man kann das ganz einfach mit ein bisschen CSS beheben.
+        
+            <br><br>
+
+            Weitere Informationen:<br><br>
+            <a href="https://www.youtube.com/watch?v=VkWJQe_EsjQ" target="_blank">In diesem Youtube-Video</a>
+
+        <br><br>
+        <hr>
+    </main>
+</body>
+</html>

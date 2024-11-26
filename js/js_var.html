@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Variables</title>
+    <link rel="stylesheet" href="js.css">
+    <link rel="icon" href="../logo.svg" type="image/svg">
+</head>
+<body>
+    <nav>
+        <label class="logo">Learn Coding</label>
+        <input type="checkbox" id="toggle_button">
+        <label for="toggle_button" class="toggle_button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li class="expandable_li">
+                <input type="checkbox" id="products_checkbox">
+                <label for="products_checkbox">Front-End</label>
+                <ul class="dropdown">
+                    <li><a href="../html/html.html">HTML</a></li>
+                    <li><a href="../css/css.html">CSS</a></li>
+                    <li><a href="../js/js.html">Javasrcipt</a></li>
+                </ul>
+            </li>
+            <li><a href="../php.html">PHP</a></li>
+            <li><a href="../python/python.html">Python</a></li>
+        </ul>
+    </nav>
+    <main>
+        <br>
+        <h1>Variabeln</h1>
+        <br>
+        <hr><br>
+        
+            <b class="title">1. Schritt</b><br><br>
+
+            Zuerst muss die Variabel deklariert werden, dazu nutzt man <i>let</i>
+            
+            <pre>
+
+                let x;
+            </pre><br>
+
+            <b class="title">2. Schritt</b><br><br>
+
+            Dann wird die Variabel vergeben:
+
+            <pre>
+
+                x = 10;
+            </pre><br><br>
+
+            <b class="title">Variabeln in Strings einfügen</b><br><br>
+
+            Man kann mit einem Dollar-Zeichen($) dahinter einer Klammer und in der Klammer eine Variabel, die Variabel in einem String ausgeben.
+
+            <br><br>
+            <pre>
+
+                let age = 25;
+
+                console.log("You are $(age) old");
+            </pre><br><br>
+            
+            <b class="title">Alle Datentypen</b><br><br>
+
+            <ol>
+                <li>Numbers (Zahlen auch float)</li>
+                <li>String</li>
+                <li>Boolean</li>
+            </ol><br><br>
+            <b class="title">Datentyp einer Variabel ausgeben</b><br><br>
+
+            Um den Datentyp einer Variabel zu erhaloten muss man bloß die "typeof var" Methode benutzten, in dem Fall steht var für egal welche Variabel<br><br>
+
+            <br><br>
+
+            <b class="title">Datentyp umwandeln</b><br><br>
+
+            x = Number(x)<br>
+            y = String(y)<br>
+            z = Boolean(z)<br><br>
+
+            <a href="https://www.youtube.com/watch?v=nbX0MIV7-Ek&list=PLZPZq0r_RZOO1zkgO4bIdfuLpizCeHYKv&index=3">Die Quelle</a>
+            <br><br>
+        <hr><br>
+    </main>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javasrcipt</title>
+    <link rel="stylesheet" href="js.css">
+    <link rel="icon" href="../logo.svg" type="image/svg">
+</head>
+<body>
+    <nav>
+        <label class="logo">Learn Coding</label>
+        <input type="checkbox" id="toggle_button">
+        <label for="toggle_button" class="toggle_button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li class="expandable_li">
+                <input type="checkbox" id="products_checkbox">
+                <label for="products_checkbox">Front-End</label>
+                <ul class="dropdown">
+                    <li><a href="../html/html.html">HTML</a></li>
+                    <li><a href="../css/css.html">CSS</a></li>
+                    <li><a href="../js/js.html">Javasrcipt</a></li>
+                </ul>
+            </li>
+            <li><a href="../php.html">PHP</a></li>
+            <li><a href="../python/python.html">Python</a></li>
+        </ul>
+    </nav>
+    <main>
+        <br>
+        <h1>User Input</h1>
+        <br>
+        <hr><br>
+        
+        
+        <b class="title">Window Alert()</b><br><br>
+
+        user_input = window.alert("Your Input");<br><br>
+
+        <b class="title">HTML Textbox</b><br><br>
+
+        HTML im body:<br><br>
+
+        <pre>
+
+            &lt;h1>Welcome&lt;/h1>&lt;br>&lt;br>
+
+            &lt;label>username: &lt;/label><br>
+            &lt;input id="myText">&lt;br>&lt;br><br><br>
+            &lt;button id ="mySubmit">submit&lt;/button>
+
+            &lt;script src="index.js">&lt;/script>
+        </pre><br><br>
+
+        Javascript:<br><br>
+
+        <pre>
+
+            let username;
+
+            document.getElementById("mySubmit").onclick = function () {
+                username = document.getElementById("myText").value;
+                cosole.log(username);
+            }
+        </pre>
+        <br>
+        <hr>
+    </main>
+</body>
+</html>

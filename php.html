@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP</title>
+    <link rel="stylesheet" href="php.css">
+    <link rel="icon" href="logo.svg" type="image/svg">
+</head>
+<body>
+    <nav>
+        <label class="logo">Learn Coding</label>
+        <input type="checkbox" id="toggle_button">
+        <label for="toggle_button" class="toggle_button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="expandable_li">
+                <input type="checkbox" id="products_checkbox">
+                <label for="products_checkbox">Front-End</label>
+                <ul class="dropdown">
+                    <li><a href="./html/html.html">HTML</a></li>
+                    <li><a href="./css/css.html">CSS</a></li>
+                    <li><a href="./js/js.html">Javasrcipt</a></li>
+                </ul>
+            </li>
+            <li><a href="#">PHP</a></li>
+            <li><a href="./python/python.html">Python</a></li>
+        </ul>
+    </nav>
+    <main>
+        <br>
+        <h1>PHP</h1>
+        <br>
+
+        <hr><br>
+        <p>
+            <b>Inhalt:</b><br>
+            <a href="#Variabeln">Variabeln</a> <br>
+            <a href="#Rechenoperationen">Rechenoperationen</a> <br>
+            <a href="#form">Daten senden mit Formularen</a> <br>
+            <a href="#math-functions">Mathematische Funktionen</a><br>
+            <a href="#if">If</a><br>
+            <a href="#logic-operators">Logische Operatoren</a><br>
+            <a href="#for">For-Loop</a><br>
+            <a href="#foreach">Foreach</a><br>
+            <a href="#while">While-Loop</a><br>
+            <a href="#switch">Switch-Statement</a><br>
+            <a href="#array">Arrays</a><br>
+            <a href="#dict">Associative Array</a><br>
+            <a href="#isset/empty">Isset/Empty</a><br>
+        </p>
+
+        <br><hr><br>
+
+        <p id="Variableln">
+            <b class="title">Variabeln:</b> <br><br>
+            
+            Vor jeder Variabel kommt ein $ (Dollar-Zeichen). Zum Beispiel wie hier: <br>
+            <i>$variabel = string/int/float/boolean</i>
+        </p><br><br>
+
+        <p id="Rechenoperationen">
+            <b class="title">Rechenoperationen</b> <br><br>
+            
+            Arithemische Operatoren: <br>
+            + <i>Addition</i> <br>
+            - <i>Subtraktion</i> <br>
+            * <i>Multiplikation</i> <br>
+            / <i>Division</i> <br>
+            % <i>Rest bei Division</i><br>
+            ** <i>Potenzierung</i><br> <br>
+            
+
+            Inkrementation/Dekrementation: <br>
+            ++ <i>wie $x += 1</i> <br>
+            -- <i>wie $x -= 1</i> <br>
+        </p><br><br>
+
+        <p id="form">
+            <b class="title">Daten senden mit Formularen</b><br><br>
+
+            Man kann mit Hilfe des Form-Elements in HTML Daten an den PHP-Server senden:
+            Hier ist ein Beispiel: <br><br>
+
+            <pre>
+                <code class="language-html">
+        &lt;form action="index.php" method="post">
+            &lt;input type="text" name="text">
+            &lt;input type="submit" value="senden">
+        &lt;/form>
+                </code></pre> <br>
+            <pre>
+                <code class="language-php">
+    &lt;?php
+        $x = $_POST["text"]
+
+        echo x
+    ?&gt;
+                </code></pre><br><br>
+
+            <b>$_GET</b> <br><br>
+
+            Vorteile:<br>
+            <ul>
+                <li>Besser für eine Search-Seite</li>
+                <li>können gecached werden</li>
+            </ul><br>
+            Nachteile:
+            <ul>
+                <li>Daten werden in die URL geschrieben</li>
+                <li>Nicht sicher</li>
+                <li>Limit an Daten</li>
+            </ul><br>
+            
+            <b>$_POST</b><br><br>
+                Vorteile:<br>
+                <ul>
+                    <li>Sicherer</li>
+                    <li>Kein Daten Limit</li>
+                </ul><br>
+                Nachteile:
+                <ul>
+                    <li>können nicht gecached werden</li>
+                </ul>
+        </p><br><br>
+
+        <p id="math-functions">
+            <b class="title">Mathematische Funktionen</b><br><br>
+
+            $total = abs($x) <i> macht negative Zahlen positiv</i> <br>
+            $total = round($x) <i>rundet x</i> <br>
+            $total = floor($x) <i>rundet x ab</i>  <br>
+            $total = ceil($x) <i>rundet x auf</i>  <br>
+            $total = sqrt($x) <i>gibt die Wurzel von x aus</i> <br>
+            $total = pow($x, $y) <i>Potenz; x = Basis, y = Exponent</i> <br>
+            $total = max($x, $y, $z) <i>gibt die Größte der Zahlen aus</i> <br>
+            $total = min($x, $y, $z) <i>gibt die Kleinste der Zahlen aus</i> <br>
+            $total = pi() <i>gibt PI aus</i> <br>
+
+         </p><br><br>
+
+         <p id="if">
+            <b class="title">If</b><br><br>
+
+            Beispiel:
+            <pre>
+                <code class="language-php">
+    &lt;?php
+        if ($x &lt;= 0) {
+            echo "Yes"
+        }
+        elseif ($x == 0) {
+            echo "No"
+        }
+
+        else {
+            echo x
+        }
+    ?&gt;</code>
+            </pre>
+
+         </p><br><br>
+
+         <p id="logic-operators">
+            <b class="title">Logische Operatoren</b><br><br>
+
+            Die logischen Operatoren kommen in die If-Conditions und sind da um zwei Conditions zu verbinden.<br><br>
+            && <i>gibt true aus, wenn beide Conditions true sind</i><br>
+            || <i>gibt true aus, wenn eine Condition true ist</i><br>
+            ! <i>gibt true aus, wenn die Condition false ist</i><br>
+         </p><br><br>
+
+         <p id="for">
+            <b class="title">For-Loop</b><br><br>
+
+            Beispiel:<br>
+            <pre>
+                <code class="language-php">
+    &lt;?php
+        for($i = 10; $i > 0;$i -=2){
+            echo $i . "&lt;br>";
+        }
+    ?&gt;</code>
+            </pre>
+         </p><br><br>
+
+         <p id="foreach">
+            <b class="title">Foreach</b><br><br>
+
+            <pre>
+                <code class="language-php">
+    &lt;?php
+        foreach($foods as $food){
+            echo $food . "&lt;br>";
+        }
+    ?&gt;</code>
+            </pre>
+         </p><br><br>
+
+         <p id="while">
+            <b class="title">While-Loop</b><br><br>
+            Beispiel:<br>
+            <pre>
+                <code class="language-php">
+    &lt;?php
+        while($x &lt; 10){
+            x++;
+            echo $x . "&lt;br>";
+        }
+    ?&gt;</code>
+            </pre>
+         </p><br><br>
+
+         <p id="switch">
+            <b class="title">Switch-Statement</b><br><br>
+
+            Beispiel:<br>
+            <pre>
+                <code class="language-php">
+    &lt;?php
+        switch($x){
+            case "1":
+                echo "x = 1"
+                break;
+            case "2":
+                echo "x = 2"
+                break;
+            case "3":
+                echo "x = 3"
+                break;
+            default:
+                echo "x ist nicht definiert"
+        }
+    ?&gt;</code>
+            </pre><br><br>
+         </p>
+
+         <p id="array">
+            <b class="title">Arrays</b><br><br>
+
+            Beispiel:<br>
+            <pre>
+                <code class="language-php">
+    &lt;?php
+        $foods = array("apple", "orange", "banana", "coconut");
+        
+        echo $foods[0];
+    ?&gt;</code>
+            </pre><br><br>
+            Array-Methods:<br>
+            $foods[0] = "pineapple"; <i>ändert apple zu pineapple</i><br>
+            array_push($foods, "pineapple"); <i>fügt pineapple am Ende hinzu</i><br>
+            $x= array_pop($foods); <i>entfernt das Letzte Element, und gibt es aus; brauch nicht in der Variabel sein</i><br>
+            $x= arrray_shift($foods); <i>entfernt das Erste Element und gibt es aus</i><br>
+            $x= array_reverse($fooods); <i>dreht die Reinfolge aller Elemente um</i><br>
+            echo count($foods); <i>gibt die Anzahl der Elemete aus</i><br>
+         </p><br><br>
+
+         <p id="dict">
+            <b class="title">Associative Array</b><br><br>
+
+            Beispiel:<br>
+            <pre>
+                <code class="language-php">
+    &lt;?php
+        $captitals = array("USA"=>"Washington D.C.",
+                        "Japan"=>"Kyoto",
+                        "South Korea"=>"Seoul",
+                        "India"=>"New Delhi");
+    ?&gt;</code>
+            </pre><br><br>
+            
+            Array-Methods:<br>
+            $captitals["USA"] = "Las Vegas"; <i>ändert das Value von USA zu Las Vegas</i><br>
+            $captitals["China"] = "Beijing"; <i>fügt den Key China mit dem Value Beijing hinzu</i><br>
+            $x= array_pop($captitals); <i>entfernt das Letzte Element, und gibt es aus</i><br>
+            $x= arrray_shift($captitals); <i>entfernt das Erste Element und gibt es aus</i><br>
+            $keys = array_keys($captitals); <i>gibt die alle keys von Capitals aus</i><br>
+            $values = array_values($captitals); <i>gibt die alle values von Capitals aus</i><br>
+            $x= array_reverse($captitals); <i>dreht die Reinfolge aller Elemente um</i><br>
+            $x= array_flip($captitals); <i>tauscht alle keys mit den Values</i><br>
+            echo count($captitals); <i>gibt die Anzahl der Elemete aus</i><br>
+         </p><br><br>
+
+         <p id="isset/empty">
+            <b class="title">Isset/Empty</b><br><br>
+
+            isset() <i>gibt true aus, wenn die Variabel in der Klammer deklariert und nicht null ist</i><br>
+            empty() <i>gibt true aus, wenn die Variabel nicht deklariert, false, null oder "" ist</i><br>
+         </p><br><br>
+         
+    </main>
+</body>
+</html>

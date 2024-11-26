@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulare/Inputs</title>
+    <link rel="stylesheet" href="html.css">
+    <link rel="icon" href="../logo.svg" type="image/svg">
+</head>
+<body>
+    <nav>
+        <label class="logo">Learn Coding</label>
+        <input type="checkbox" id="toggle_button">
+        <label for="toggle_button" class="toggle_button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li class="expandable_li">
+                <input type="checkbox" id="products_checkbox">
+                <label for="products_checkbox">Front-End</label>
+                <ul class="dropdown">
+                    <li><a href="html.html">HTML</a></li>
+                    <li><a href="../css/css.html">CSS</a></li>
+                    <li><a href="../js/js.html">Javasrcipt</a></li>
+                </ul>
+            </li>
+            <li><a href="../php.html">PHP</a></li>
+            <li><a href="../python/python.html">Python</a></li>
+        </ul>
+    </nav>
+    <main>
+        <br>
+        <h1>Formulare/Inputs</h1>
+        <br>
+        <hr><br>
+            <b class="title">Formulare</b><br><br>
+
+            &lt;form> &lt;/form> <br><br>
+            Ins Formular: <br>
+            <ul>
+            <li>method=„get“ (irgend etwas bekommen)</li> 
+            <li>method=„post“ (wird an Website geschickt)</li> 
+            <li>action=„URL“ (an die URL wird das geschickt)</li> 
+            </ul><br><br>
+
+            <b class="title">Inputs</b><br><br>
+
+            &lt;input/>  <br><br>
+            Ins Input: <br>
+            <ul>
+            <li>name=„Name“ (eher wichtig für andere Programmiersprachen) </li>
+            <li>required (ob ausgefüllt sein muss) </li>
+            <li>value=„Niklas“ (steht dann schon vorher drin) </li>
+            <li>placeholder=„Ihre Email“ (steht drin, doch wenn man drauf drückt, ist es weg) </li>
+            <li>type=„(kommt jetzt)“ </li>
+            <li>readonly (kann nur gelesen werden)</li> 
+            <li>checked (wenn schon aus gewählt sein soll eher bei radio)</li>
+        </ul><br><br>
+            
+        In Type: <br>
+        <ul>
+        <li>text (man kann Text eingeben, man sieht die Zeichen) </li>
+        <li>password (kann was eingeben, Zeichen sind als Punkte dargestellt) </li>
+        <li>email (dort muss dann Email rein)</li> 
+        <li>submit (Sende-Knopf) </li>
+        <li>date (cooles Datum-Feld erscheint) </li>
+        <li>time (Uhrzeit cool einstellen) </li>
+        <li>hidden (wird versteckt) </li>
+        <li>radio (cooles Auswahl-Feld) </li>
+        <ul>
+            <li>Tipp 1: Das value wird an Server geschickt </li>
+            <li>Tipp 2: wenn die name=„“ gleich sind bei zwei Radio-Buttons kann man nur eins auswählen </li>
+        </ul>
+        
+        <li>checkbox (coole Checkbox mit so einem Haken)</li>
+        </ul><br><br>
+        
+        &lt;select> &lt;/select> (Eine Art Container für Auswahlboxen(&lt;option>) <br><br>
+            Attribute: <br>
+            - multiple (macht Mehrfachauswahl möglich; man muss da Strg drücken) <br><br>
+            &lt;option> &lt;/option> <br><br>
+
+            Beispiel: <br><br>
+            <pre>
+
+        &lt;select name=„feld9“> 
+            &lt;option value=„select1“>Auswahl1&lt;/option> 
+            &lt;option value=„select2“>Auswahl2&lt;/option> 
+        &lt;/select>
+            </pre>
+            
+            
+        <br>
+        <hr>
+    </main>
+</body>
+</html>

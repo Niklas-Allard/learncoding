@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medien einfügen</title>
+    <link rel="stylesheet" href="html.css">
+    <link rel="icon" href="../logo.svg" type="image/svg">
+</head>
+<body>
+    <nav>
+        <label class="logo">Learn Coding</label>
+        <input type="checkbox" id="toggle_button">
+        <label for="toggle_button" class="toggle_button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li class="expandable_li">
+                <input type="checkbox" id="products_checkbox">
+                <label for="products_checkbox">Front-End</label>
+                <ul class="dropdown">
+                    <li><a href="html.html">HTML</a></li>
+                    <li><a href="../css/css.html">CSS</a></li>
+                    <li><a href="../js/js.html">Javasrcipt</a></li>
+                </ul>
+            </li>
+            <li><a href="../php.html">PHP</a></li>
+            <li><a href="../python/python.html">Python</a></li>
+        </ul>
+    </nav>
+    <main>
+        <br>
+        <h1>Medien einfügen</h1>
+        <br>
+        <hr><br>
+            
+            <b class="title">Bilder einfügen</b><br><br>
+
+            &lt;img scr=„Bildadresse“ width = „400“ alt="Text der bei dem nicht Laden angezeigt wird"><br><br>
+
+            <b class="title">Audio einfügen</b><br><br>
+
+            &lt;audio> &lt;/audio><br><br>
+            Atribute: <br> 
+            
+            <ul>
+            <li>controls (macht an-aus-Button usw.) </li>
+            <li>muted (ist automatisch gemuted)</li> 
+            <li>autoplay (wird automatisch eingeschaltet)</li> 
+            <li>loop (wenn es zu ende ist, beginnt es von neu) </li>
+            </ul><br><br>
+            
+            
+            &lt;source/> <br><br>
+            Atrribute: <br>
+
+            <ul>
+                <li>src=„Pfad“</li>
+                <li>type=„audio/mpeg“</li> 
+            </ul><br><br>
+            
+            Beispiel: <br><br>
+            <pre>
+
+            &lt;audio controls muted autoplay loop>  
+                &lt;source src=„static/media/audio1.mp3“ type=„audio/mpeg“ /> 
+            &lt;/audio>
+            </pre><br><br>
+
+            <b class="title">Video einfügen</b><br><br>
+
+            &lt;video> &lt;/video>  <br><br>
+            
+            Attribute: <br>
+            <ul>
+                <li>controls (macht an-aus-Button usw.)</li> 
+                <li>muted (ist automatisch gemuted)</li> 
+                <li>autoplay (spielt automatisch ab)</li> 
+                <li>loop (wenn video endet beginnt von neu)</li> 
+                <li>width=„Zahl“ (wie groß das Video ist)</li> 
+                <li>poster=„Pfad“ (Art Thumbnail für das Video)</li> 
+            </ul><br>
+            
+            
+            &lt;source/> (wie bei der Audio)<br><br>
+
+            <b class="title">Youtube-Videos einfügen</b><br><br>
+
+            Um Youtube-Videos einzufügen, muss man bloß auf der Youtube-Website ein Video schauen und dann auf „Teilen“ und dann auf „Einbetten“. Das was rauskommt, ist schon das was man einfügen muss. Jetzt ist man fertig. 
+            <br><br>
+        <br>
+        <hr>
+    </main>
+</body>
+</html>
