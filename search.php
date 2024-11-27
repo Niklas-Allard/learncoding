@@ -33,17 +33,10 @@
     </nav>
 
 
-    <form action="search.php">
-        
-        <select name="language" id="">
-            <option value="html">HTML</option>
-            <option value="css">CSS</option>
-            <option value="js">Javascript</option>
-            <option value="php">PHP</option>
-            <option value="python">Python</option>
-        </select>
+    <form action="search.php" method="get">
 
-        <input type="text">
+        <label for="search"></label><br>
+        <input type="text" name="search" id="search">
 
     </form>
 
@@ -52,19 +45,41 @@
 
 <?php
 
-$language = $_GET["language"]; 
+$search = $_GET["search"];
 
-// getting the json data file that contains all possible searching tags
-
-$jsonFile = 'daten.json'; // path of the json file
+// getting the json file that contains all searching tags
+$jsonFile = 'daten.json';
 $jsonData = file_get_contents($jsonFile);
 
-echo "fdssfsf";
 
-// Schritt 2: Die JSON-Daten in ein PHP-Array oder Objekt umwandeln
-$data = json_decode($jsonData, true);  // true wandelt es in ein Array um, false für ein Objekt
+// gives an error if it does not work
+if ($jsonData === false) {
+    die("Fehler beim Laden der Datei.");
+}
 
-// Optional: Daten anzeigen
-print_r($data);
+// changing the data type to an array (assosiative)
+$data = json_decode($jsonData, true);
+
+
+// another error handling code
+if (json_last_error() !== JSON_ERROR_NONE) {
+    die("Fehler beim Decodieren der JSON-Daten.");
+}
+
+// changes the array
+$data['neuesFeld'] = 'Neuer Wert';
+
+// Schritt 4: Die geänderten Daten in JSON kodieren
+$newJsonData = json_encode($data, JSON_PRETTY_PRINT);
+
+if ($newJsonData === false) {
+    die("Fehler beim Kodieren der JSON-Daten.");
+}
+
+// Schritt 5: Die geänderten JSON-Daten zurück in die Datei schreiben
+if (file_put_contents($jsonFile, $newJsonData) === false) {
+    die("Fehler beim Speichern der Datei.");
+}
+
+echo "Daten wurden erfolgreich geändert!";
 ?>
-
