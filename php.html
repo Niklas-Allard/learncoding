@@ -54,6 +54,9 @@
             <a href="#array">Arrays</a><br>
             <a href="#dict">Associative Array</a><br>
             <a href="#isset/empty">Isset/Empty</a><br>
+            <a href="#function">Funktionen</a><br><br>
+            <a href="#strmethods">String Methods</a><br><br>
+            <a href="#filter">Filter</a>
         </p>
 
         <br><hr><br>
@@ -294,6 +297,122 @@
             isset() <i>gibt true aus, wenn die Variabel in der Klammer deklariert und nicht null ist</i><br>
             empty() <i>gibt true aus, wenn die Variabel nicht deklariert, false, null oder "" ist</i><br>
          </p><br><br>
+
+         <p id="function">
+         
+            <b class="title">Funktionen</b><br><br>
+
+            <pre>
+            
+                function output($x) {
+                    return x
+                }
+            </pre>
+         </p><br><br>
+
+         <p id="strmethods">
+         
+            <b class="title">String Mezthods</b><br><br>
+
+            <ul>
+                <li>strlen() <i>Gibt die Länge eines Strings zurück.</i></li>
+                <li>strtoupper() <i>Wandelt einen String in Großbuchstaben um.</i></li>
+                <li>strtolower() <i>Wandelt einen String in Kleinbuchstaben um.</i></li>
+                <li>ucfirst() <i>Wandelt den ersten Buchstaben eines Strings in einen Großbuchstaben um.</i></li>
+                <li>ucwords() <i>Wandelt den ersten Buchstaben jedes Wortes in einen Großbuchstaben um.</i></li>
+                <li>trim() <i>Entfernt Leerzeichen (oder andere Zeichen) vom Anfang und Ende eines Strings.</i></li>
+                <li>ltrim() <i>Entfernt Leerzeichen (oder andere Zeichen) vom Anfang eines Strings.</i></li>
+                <li>rtrim() <i>Entfernt Leerzeichen (oder andere Zeichen) vom Ende eines Strings.</i></li>
+                <li>substr() <i>Gibt einen Teil eines Strings zurück.</i></li>
+                <li>strpos() <i>Sucht nach einem bestimmten Zeichen oder einer bestimmten Zeichenkette in einem String und gibt die Position zurück.</i></li>
+                <li>str_replace() <i>Ersetzt alle Vorkommen einer bestimmten Zeichenkette durch eine andere.</i></li>
+                <li>str_split() <i>Teilt einen String in ein Array von Teilstrings.</i></li>
+                <li>explode() <i>Teilt einen String anhand eines bestimmten Trennzeichens in ein Array.</i></li>
+                <li>implode() <i>Verbindet die Elemente eines Arrays zu einem String.</i></li>
+                <li>strrev() <i>Kehrt die Reihenfolge der Zeichen in einem String um.</i></li>
+                <li>str_repeat() <i>Wiederholt einen String eine bestimmte Anzahl von Malen.</i></li>
+                <li>htmlspecialchars() <i>Wandelt spezielle Zeichen in HTML-Entitäten um.</i></li>
+                <li>strip_tags() <i>Entfernt HTML- und PHP-Tags aus einem String.</i></li>
+                <li>sprintf() <i>Formatiert einen String gemäß einer bestimmten Vorlage.</i></li>
+                <li>printf() <i>Gibt einen formatierten String aus.</i></li>
+            </ul>
+
+         </p><br><br>
+
+         <p id="filter">
+         
+            <b class="title">Filter</b><br><br>
+
+            <b>1. Filter_Var()</b><br><br>
+
+            In Verwendung von filter_var():
+
+            Beispiel:<br><br>
+
+            <pre>
+            
+                &gt;?php
+                    $email = "test@example.com";
+
+                if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                    echo "Die E-Mail-Adresse ist gültig.";
+                } else {
+                    echo "Die E-Mail-Adresse ist ungültig.";
+                }
+                ?>
+            </pre><br><br>
+
+            Weitere:
+            <ul>
+
+                <li>FILTER_VALIDATE_URL</li>
+                <li>FILTER_SANITIZE_STRING</li>
+                <li>FILTER_VALIDATE_INT</li>
+            </ul><br><br>
+
+            <b>Filter_Var_Array()</b><br><br>
+
+            <pre>
+
+                &gt;?php
+                $input = array(
+                    'email' => 'test@example.com',
+                    'url' => 'https://www.example.com',
+                    'age' => '25'
+                );
+
+                $filters = array(
+                    'email' => FILTER_VALIDATE_EMAIL,
+                    'url' => FILTER_VALIDATE_URL,
+                    'age' => FILTER_VALIDATE_INT
+                );
+
+                $filtered_input = filter_var_array($input, $filters);
+
+                print_r($filtered_input);
+                ?>
+            </pre><br><br>
+
+            <b>Filer_Input</b><br><br>
+
+            Man kann damit _GET, _POST oder _COOKIE filtern<br><br>
+
+            <pre>
+
+                $age = filter_input(INPUT_GET, 'age', FILTER_VALIDATE_INT);
+            </pre>
+
+         </p><br><br>
+
+         <p id="include">
+
+            <b class="title">include()</b><br><br>
+
+            Damit kann man andere PHP oder HTML Datein einbinden zum Beispiel kann man damit de Header anzeigen: <br><br>
+
+            $age = filter_input(INPUT_GET, 'age', FILTER_VALIDATE_INT);
+
+         </p>
          
     </main>
 </body>
