@@ -56,7 +56,9 @@
             <a href="#isset/empty">Isset/Empty</a><br>
             <a href="#function">Funktionen</a><br><br>
             <a href="#strmethods">String Methods</a><br><br>
-            <a href="#filter">Filter</a>
+            <a href="#filter">Filter</a><br><br>
+            <a href="#include">include()</a><br><br>
+            <a href="#cookie">Cookie</a><br><br>
         </p>
 
         <br><hr><br>
@@ -412,6 +414,93 @@
 
             $age = filter_input(INPUT_GET, 'age', FILTER_VALIDATE_INT);
 
+         </p><br><br>
+
+         <p id="cookie">
+
+            <b class="title">Cookies</b><br><br>
+
+            <b>1. Cookie erstellen</b>
+
+            Dabei wird setcookie() benutzt. Setcookie hat mehrere Parameter:
+            <ul>
+
+                <li>Name: Der Name des Cookies (z. B. "user").</li>
+                <li>Wert: Der Wert, den das Cookie speichern soll (z. B. "Max Mustermann").</li>
+                <li>Ablaufzeit: Der Zeitpunkt, wann das Cookie abläuft. In diesem Beispiel wird time() + 86400 verwendet, was 86400 Sekunden (also 1 Tag) entspricht.</li>
+                <li>Pfad: Der Pfad, für den das Cookie gültig ist. In diesem Beispiel ist es der gesamte Webserver ("/").</li>
+                <li>Domain: Die Domain, für die das Cookie gilt (optional).</li>
+                <li>Sicherheitsflag: Wenn true, wird das Cookie nur über HTTPS gesendet.</li>
+                <li>HttpOnly: Wenn true, kann das Cookie nur über HTTP (also nicht über JavaScript) zugänglich sein.</li>
+            </ul><br><br>
+
+            <pre>
+                
+                setcookie("user", "Max Mustermann", time() + 86400, "/");  // time() + 86400 = 1 Tag
+            </pre><br><br>
+
+            <b>2. Auf Cookies zugreifen</b><br><br>
+
+            Man nutzt es wie bei einem assosiative array: <i>$_COOKIE["user"]</i><br><br>
+
+            <b>3. Cookies löschen</b><br><br>
+
+            Um ein Cookie zu löschen muss man das Ablaufdatum einfach in die Vergangheit zu tun: <br><br>
+
+            <pre>
+
+                setcookie("user", "", time() - 3600, "/");
+            </pre><br><br>
+
+            <b style="color: red;">Wichtige Informationen</b><br><br>
+
+            <ul>
+                <li><b>Lebensdauer:</b> Ein Cookie wird im Browser des Benutzers gespeichert, bis es abläuft oder gelöscht wird. Wenn du die Ablaufzeit nicht angibst, wird das Cookie nur für die Dauer der Sitzung gespeichert (Session-Cookie).</li>
+                <li><b>Verfügbarkeit:</b> Ein Cookie ist erst nach der nächsten Anfrage an den Server verfügbar. Das bedeutet, dass du ein Cookie setzen und es in derselben Ausführung nicht sofort auslesen kannst. Um es beispielsweise nach dem Setzen zu verwenden, musst du eine Seite neu laden.</li>
+            </ul>
+
+         </p><br><br>
+
+         <p id="session">
+
+            Die Session muss vor jeder HTML oder echo-Ausgabe gestartet werden:<br><br>
+
+            <b>1. Session starten</b><br>
+            <pre>
+
+                session_start();
+            </pre><br><br>
+
+            <b>2. Session-Daten speichern</b><br><br>
+
+            Wie bei einem Assosiative Array:<br><br>
+
+            <pre>
+
+                $_SESSION['username'] = 'Max Mustermann';
+            </pre><br><br>
+
+
+            <b>3. Session-Daten abrufen</b><br><br>
+
+            <pre>
+
+                $_SESSION['username']
+            </pre><br><br>
+
+
+            <b>4 Session beenden</b><br><br>
+
+            Eine bestimmte Variabel löschen:<br><br>
+            unset($_SESSION['username']);<br><br>
+            
+            <ul>
+                     
+                <li>session_unset() - <i>Löscht alle Session-Variablen</i></li>
+                <li>session_destroy() - <i>löscht die Session</i></li>
+                <li>session_id() - gibt die Session-ID aus</li>
+                <li>session_regenerate_id() - <i>erzeugt eine neue Session-ID für zusätzliche Sicherheit</i></li>
+            </ul><br><br>
          </p>
          
     </main>
